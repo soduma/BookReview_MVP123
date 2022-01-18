@@ -12,11 +12,16 @@ class ReviewListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    
+        
+        presenter.viewDidLoad()
     }
 }
 
 extension ReviewListViewController: ReviewListProtocol {
+    func setUpNavigation() {
+        title = "도서 리뷰"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+    }
     
 }
