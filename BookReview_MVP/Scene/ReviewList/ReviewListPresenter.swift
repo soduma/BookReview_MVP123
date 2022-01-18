@@ -10,6 +10,7 @@ import UIKit
 protocol ReviewListProtocol {
     func setUpNavigation()
     func setUpTableView()
+    func presentToReviewWriteViewController()
 }
 
 class ReviewListPresenter: NSObject {
@@ -22,6 +23,10 @@ class ReviewListPresenter: NSObject {
     func viewDidLoad() {
         viewController.setUpNavigation()
         viewController.setUpTableView()
+    }
+    
+    func tapRightBarButton() {
+        viewController.presentToReviewWriteViewController()
     }
 }
 

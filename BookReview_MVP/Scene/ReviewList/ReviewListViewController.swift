@@ -28,7 +28,7 @@ extension ReviewListViewController: ReviewListProtocol {
     func setUpNavigation() {
         title = "도서 리뷰"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tapRightBarButton))
     }
     
     func setUpTableView() {
@@ -36,5 +36,17 @@ extension ReviewListViewController: ReviewListProtocol {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    func presentToReviewWriteViewController() {
+        let vc = UINavigationController(rootViewController: ReviewWriteViewController())
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+}
+
+extension ReviewListViewController {
+    @objc func tapRightBarButton() {
+        presenter.tapRightBarButton()
     }
 }
