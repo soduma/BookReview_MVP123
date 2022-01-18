@@ -22,6 +22,12 @@ class ReviewListViewController: UIViewController {
         
         presenter.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.viewWillAppear()
+    }
 }
 
 extension ReviewListViewController: ReviewListProtocol {
@@ -42,6 +48,11 @@ extension ReviewListViewController: ReviewListProtocol {
         let vc = UINavigationController(rootViewController: ReviewWriteViewController())
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
+    }
+    
+    func reloadTableView() {
+        tableView.reloadData()
+        print("테이블뷰 리로드")
     }
 }
 

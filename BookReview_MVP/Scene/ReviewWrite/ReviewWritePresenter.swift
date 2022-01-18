@@ -8,7 +8,10 @@
 import UIKit
 
 protocol ReviewWriteProtocol {
-    
+    func setUpNavigation()
+    func tapCloseButton()
+    func tapSaveButton()
+    func setUpLayout()
 }
 
 class ReviewWritePresenter {
@@ -16,5 +19,18 @@ class ReviewWritePresenter {
     
     init(viewController: ReviewWriteProtocol) {
         self.viewController = viewController
+    }
+    
+    func viewDidLoad() {
+        viewController.setUpNavigation()
+        viewController.setUpLayout()
+    }
+    
+    func tapLeftBarButton() {
+        viewController.tapCloseButton()
+    }
+    
+    func tapRightBarButton() {
+        viewController.tapSaveButton()
     }
 }
