@@ -23,6 +23,9 @@
 		A01EE0CB27969F3B003DAC85 /* ReviewWritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0CA27969F3B003DAC85 /* ReviewWritePresenter.swift */; };
 		A01EE0CE2796B2B0003DAC85 /* BookSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0CD2796B2B0003DAC85 /* BookSearchViewController.swift */; };
 		A01EE0D02796B407003DAC85 /* BookSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0CF2796B407003DAC85 /* BookSearchPresenter.swift */; };
+		A01EE0D32797DCA6003DAC85 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0D22797DCA6003DAC85 /* RequestModel.swift */; };
+		A01EE0D62797DDD6003DAC85 /* NaverAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0D52797DDD6003DAC85 /* NaverAPI.swift */; };
+		A01EE0D82797E0D3003DAC85 /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0D72797E0D3003DAC85 /* BookSearchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		A01EE0CA27969F3B003DAC85 /* ReviewWritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritePresenter.swift; sourceTree = "<group>"; };
 		A01EE0CD2796B2B0003DAC85 /* BookSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewController.swift; sourceTree = "<group>"; };
 		A01EE0CF2796B407003DAC85 /* BookSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchPresenter.swift; sourceTree = "<group>"; };
+		A01EE0D22797DCA6003DAC85 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		A01EE0D52797DDD6003DAC85 /* NaverAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPI.swift; sourceTree = "<group>"; };
+		A01EE0D72797E0D3003DAC85 /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 			children = (
 				A01EE08B27968B10003DAC85 /* AppDelegate.swift */,
 				A01EE08D27968B10003DAC85 /* SceneDelegate.swift */,
+				A01EE0D42797DDC2003DAC85 /* Network */,
 				A01EE0C727968D2F003DAC85 /* Scene */,
 				A01EE09427968B12003DAC85 /* Assets.xcassets */,
 				A01EE09627968B12003DAC85 /* LaunchScreen.storyboard */,
@@ -175,6 +182,16 @@
 				A01EE0CF2796B407003DAC85 /* BookSearchPresenter.swift */,
 			);
 			path = BookSearch;
+			sourceTree = "<group>";
+		};
+		A01EE0D42797DDC2003DAC85 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A01EE0D22797DCA6003DAC85 /* RequestModel.swift */,
+				A01EE0D52797DDD6003DAC85 /* NaverAPI.swift */,
+				A01EE0D72797E0D3003DAC85 /* BookSearchManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,12 +335,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01EE0CB27969F3B003DAC85 /* ReviewWritePresenter.swift in Sources */,
+				A01EE0D82797E0D3003DAC85 /* BookSearchManager.swift in Sources */,
 				A01EE09027968B10003DAC85 /* ReviewListViewController.swift in Sources */,
 				A01EE08C27968B10003DAC85 /* AppDelegate.swift in Sources */,
 				A01EE0C927969F2B003DAC85 /* ReviewWriteViewController.swift in Sources */,
 				A01EE0C527968D1D003DAC85 /* ReviewListPresenter.swift in Sources */,
 				A01EE0D02796B407003DAC85 /* BookSearchPresenter.swift in Sources */,
 				A01EE08E27968B10003DAC85 /* SceneDelegate.swift in Sources */,
+				A01EE0D62797DDD6003DAC85 /* NaverAPI.swift in Sources */,
+				A01EE0D32797DCA6003DAC85 /* RequestModel.swift in Sources */,
 				A01EE0CE2796B2B0003DAC85 /* BookSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
