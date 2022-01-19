@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class ReviewWriteViewController: UIViewController {
     private lazy var presenter = ReviewWritePresenter(viewController: self)
@@ -18,6 +19,7 @@ class ReviewWriteViewController: UIViewController {
         button.contentHorizontalAlignment = .left
         button.titleLabel?.font = .systemFont(ofSize: 24, weight: .bold)
         button.addTarget(self, action: #selector(tapBookButton), for: .touchUpInside)
+        button.titleLabel?.numberOfLines = 2
         return button
     }()
     
@@ -36,6 +38,12 @@ class ReviewWriteViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.backgroundColor = .secondarySystemBackground
         return imageView
+    }()
+    
+    private lazy var separateView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .separator
+        return view
     }()
     
     override func viewDidLoad() {
@@ -78,12 +86,18 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
     }
     
     func presentToBookSearchViewController() {
-        present(UINavigationController(rootViewController: BookSearchViewController()), animated: true, completion: nil)
+        present(UINavigationController(rootViewController: BookSearchViewController(bookSearchDelegate: presenter)), animated: true, completion: nil)
+    }
+    
+    func updateViews(title: String, imageURL: URL?) {
+        bookTitleButton.setTitle(title, for: .normal)
+        bookTitleButton.setTitleColor(.label, for: .normal)
+        bookImageView.kf.setImage(with: imageURL)
     }
     
     func setUpLayout() {
         view.backgroundColor = .systemBackground
-        [bookTitleButton, bookTextView, bookImageView]
+        [bookTitleButton, separateView, bookTextView, bookImageView]
             .forEach { view.addSubview($0) }
         
         bookTitleButton.snp.makeConstraints {
@@ -92,8 +106,15 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
             $0.height.equalTo(50)
         }
         
+        separateView.snp.makeConstraints {
+            $0.top.equalTo(bookTitleButton.snp.bottom).offset(8)
+            $0.leading.equalTo(bookTitleButton)
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(1)
+        }
+        
         bookTextView.snp.makeConstraints {
-            $0.top.equalTo(bookTitleButton.snp.bottom).offset(16)
+            $0.top.equalTo(separateView.snp.bottom).offset(16)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
         

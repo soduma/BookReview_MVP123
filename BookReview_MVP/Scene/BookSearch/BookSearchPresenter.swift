@@ -13,14 +13,21 @@ protocol BookSearchProtocol {
     func reloadView()
 }
 
+protocol BookSearchDelegate {
+    func selectBook(_ book: Book)
+}
+
 class BookSearchPresenter: NSObject {
     private let viewController: BookSearchProtocol
     private let manager = BookSearchManager()
     
+    private let delegate: BookSearchDelegate
+    
     private var books: [Book] = []
     
-    init(viewController: BookSearchProtocol) {
+    init(viewController: BookSearchProtocol, delegate: BookSearchDelegate) {
         self.viewController = viewController
+        self.delegate = delegate
     }
     
     func viewDidLoad() {
@@ -40,6 +47,8 @@ extension BookSearchPresenter: UISearchBarDelegate { //vc에서 해도 됨. 취�
 
 extension BookSearchPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selecteBook = books[indexPath.row]
+        delegate.selectBook(selecteBook)
         viewController.dismiss()
     }
 }
