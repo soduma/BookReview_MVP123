@@ -12,7 +12,7 @@ class ReviewListViewController: UIViewController {
     private lazy var presenter = ReviewListPresenter(viewController: self)
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.dataSource = presenter
         return tableView
     }()

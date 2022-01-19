@@ -12,6 +12,7 @@ protocol ReviewWriteProtocol {
     func tapCloseButton()
     func tapSaveButton()
     func setUpLayout()
+    func presentToBookSearchViewController()
 }
 
 class ReviewWritePresenter {
@@ -32,5 +33,9 @@ class ReviewWritePresenter {
     
     func tapRightBarButton() {
         viewController.tapSaveButton()
+    }
+    
+    func tapBookButton() {
+        viewController.presentToBookSearchViewController()
     }
 }
