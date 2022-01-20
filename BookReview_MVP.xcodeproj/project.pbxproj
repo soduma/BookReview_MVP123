@@ -30,6 +30,7 @@
 		A01EE0DC2797F1B8003DAC85 /* BookReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0DB2797F1B8003DAC85 /* BookReview.swift */; };
 		A01EE0DF2798E8D9003DAC85 /* MockReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0DE2798E8D9003DAC85 /* MockReviewListViewController.swift */; };
 		A01EE0E12798E901003DAC85 /* MockUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0E02798E901003DAC85 /* MockUserDefaultsManager.swift */; };
+		A01EE0E52798EA9F003DAC85 /* ReviewWritePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01EE0E42798EA9F003DAC85 /* ReviewWritePresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		A01EE0DB2797F1B8003DAC85 /* BookReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReview.swift; sourceTree = "<group>"; };
 		A01EE0DE2798E8D9003DAC85 /* MockReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReviewListViewController.swift; sourceTree = "<group>"; };
 		A01EE0E02798E901003DAC85 /* MockUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsManager.swift; sourceTree = "<group>"; };
+		A01EE0E42798EA9F003DAC85 /* ReviewWritePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritePresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				A01EE0A227968B13003DAC85 /* ReviewListPresenterTests.swift */,
+				A01EE0E42798EA9F003DAC85 /* ReviewWritePresenterTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			files = (
 				A01EE0DF2798E8D9003DAC85 /* MockReviewListViewController.swift in Sources */,
 				A01EE0A327968B13003DAC85 /* ReviewListPresenterTests.swift in Sources */,
+				A01EE0E52798EA9F003DAC85 /* ReviewWritePresenterTests.swift in Sources */,
 				A01EE0E12798E901003DAC85 /* MockUserDefaultsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

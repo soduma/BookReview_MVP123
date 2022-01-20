@@ -19,4 +19,9 @@ struct Book: Codable {
     var imageURL: URL? {
         return URL(string: image ?? "")
     }
+    
+    init(title: String, imageURL: String?) {
+        self.title = title
+        self.image = imageURL
+    }
 }
