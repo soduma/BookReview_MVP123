@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol UserDefaultsProtocol {
+protocol UserDefaultsManagerProtocol {
     func getReview() -> [BookReview]
     func setReview(_ newValue: BookReview)
 }
 
-struct UserDefaultsManager: UserDefaultsProtocol {
+struct UserDefaultsManager: UserDefaultsManagerProtocol {
     enum Key: String {
         case review
     }
